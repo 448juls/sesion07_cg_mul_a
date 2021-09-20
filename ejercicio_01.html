@@ -15,10 +15,10 @@ var ctx = document.getElementById('canvas').getContext('2d');
 function deg2rad(g){
   return (Math.PI/180)*g;
 }
-
+ 
 function rectBlanco(x,y,w,h, deg){
 
-  ctx.fillStyle = 'white';
+  ctx.fillStyle = 'white'; 
   ctx.fillRect(x, y, w, h);
 }
 
@@ -27,6 +27,7 @@ function rotarTrazar(n){
   ctx.restore();
 
   if(n==1){
+    rectBlanco(150, 30, 100, 100, 25);
     rectBlanco(30, 30, 100, 100, 25);
     ctx.translate(80, 80); // translate to rectangle center
                           // x = x + 0.5 * width
@@ -37,9 +38,10 @@ function rotarTrazar(n){
   }
 
   if(n==2){
+  rectBlanco(30, 30, 100, 100, 25);
   rectBlanco(150, 30, 100, 100, 25);
     ctx.translate(200, 80); // translate to rectangle center
-                          // x = x + 0.5 * width
+                           // x = x + 0.5 * width
                           // y = y + 0.5 * height
    ctx.rotate(deg2rad(25)); // rotate
    ctx.translate(-200, -80); // translate back
@@ -71,7 +73,7 @@ function draw() {
  
  rectAzul();
  rectGris();
-ctxx.save();
+ ctx.save();
 }
 
 </script>
