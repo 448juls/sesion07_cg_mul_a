@@ -24,37 +24,54 @@ function rectBlanco(x,y,w,h, deg){
 
 function rotarTrazar(n){
 
+  ctx.restore();
 
   if(n==1){
     rectBlanco(30, 30, 100, 100, 25);
+    ctx.translate(80, 80); // translate to rectangle center
+                          // x = x + 0.5 * width
+                          // y = y + 0.5 * height
+   ctx.rotate(deg2rad(25)); // rotate
+   ctx.translate(-80, -80); // translate back
+   rectAzul();
+  }
+
+  if(n==2){
+  rectBlanco(150, 30, 100, 100, 25);
     ctx.translate(200, 80); // translate to rectangle center
                           // x = x + 0.5 * width
                           // y = y + 0.5 * height
    ctx.rotate(deg2rad(25)); // rotate
    ctx.translate(-200, -80); // translate back
-    
+   rectGris();
+  
   }
+
 
 }
 
-function draw() {
-
-
-  // left rectangles, rotate from canvas origin
-
+function rectAzul(){
+   
+   
   // blue rect
   ctx.fillStyle = '#0095DD';
   ctx.fillRect(30, 30, 100, 100);
 
+}
 
-  
+function rectGris(){
 
-  // right rectangles, rotate from rectangle center
-  // draw blue rect
   ctx.fillStyle = '#4D4E53';
   ctx.fillRect(150, 30, 100, 100);
 
 
+}
+
+function draw() {
+ 
+ rectAzul();
+ rectGris();
+ctxx.save();
 }
 
 </script>
